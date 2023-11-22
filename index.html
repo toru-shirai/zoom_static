@@ -4,13 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="main.css" type="text/css">
 </head>
 <body>
     <div id ="main">
-        this is my page
+        <p>
+            ランダム抽選(β版)
+        </p>
+        <p>
+            欠席者があたった場合は、再度抽選してください
+        </p>
     </div>
-    <input id="button1" type="button" value="ボタンを押す" onclick="alertButton()">
+    <div>
+        <input id="button1" type="button" value="Aチーム抽選" onclick="AteamdecideButton()">
+        <input id="button1" type="button" value="Bチーム抽選" onclick="BteamdecideButton()">
+    </div>
+    <div id ="decided-person">
+    </div>
     <script src="https://appssdk.zoom.us/sdk.min.js"></script>
-    <script src="/static_test.js"></script>
+    <script src="/main.js"></script>
 </body>
 </html>
