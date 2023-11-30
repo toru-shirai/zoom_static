@@ -1,17 +1,24 @@
-async function configureApp() {
-    const configResponse = await zoomSdk.config({
-      version: "0.16",
-      popoutSize: {width: 480, height: 360},
-      capabilities: ["shareApp"]
-    })
- }
+const start = async function(a, b) {
+    const result = await zoomSdk.config({
+      version: '0.16',
+      capabilities: [
+        "setVirtualBackground",
+        "getMeetingContext"
+      ],
+    });;
+  }
 
 
 async function AteamdecideButton(){
+    start();
+
+    // configureApp()
     // res = await zoomSdk.connect()
-    // res2 = await zoomSdk.postMessage({ message:"test" })
-    // console.log(res)
-    // console.log(res2)
+    res = await zoomSdk.getMeetingContext();
+    res2 = await zoomSdk.postMessage({ message:"test" })
+    console.log(res)
+    console.log(res2)
+    
     const array = ["Y.K","H.S","T.Y","T.I","K.O","R.K","A.H","M.T","J.H","H.O","J.O"]
     decideMain(array)
 }
@@ -39,6 +46,21 @@ function decideMain(array){
             clearInterval(randomDecide);
           }, 3000);
 
-
-
     }
+
+    async function setVirtualForeground(){
+        var imgdata = await getImageData(image.src);
+     
+        var myOptions = {
+          imageData: imgdata
+        };
+     
+        console.log("setVirtualForeground");
+        imageid = await zoomSdk.setVirtualForeground(myOptions)
+        .then((r) => {
+            console.log("setVirtualForeground", r);
+        })
+        .catch((e) => {
+            console.log("setVirtualForeground", e);
+        });
+     }
