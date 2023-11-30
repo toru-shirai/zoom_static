@@ -14,10 +14,10 @@ async function AteamdecideButton(){
 
     // configureApp()
     // res = await zoomSdk.connect()
-    res = await zoomSdk.getMeetingContext();
-    res2 = await zoomSdk.postMessage({ message:"test" })
-    console.log(res)
-    console.log(res2)
+    // res = await zoomSdk.getMeetingContext();
+    // res2 = await zoomSdk.postMessage({ message:"test" })
+    // console.log(res)
+    // console.log(res2)
     
     const array = ["Y.K","H.S","T.Y","T.I","K.O","R.K","A.H","M.T","J.H","H.O","J.O"]
     decideMain(array)
