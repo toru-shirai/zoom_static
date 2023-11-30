@@ -1,4 +1,17 @@
-function AteamdecideButton(){
+async function configureApp() {
+    const configResponse = await zoomSdk.config({
+      version: "0.16",
+      popoutSize: {width: 480, height: 360},
+      capabilities: ["shareApp"]
+    })
+ }
+
+
+async function AteamdecideButton(){
+    res = await zoomSdk.connect()
+    res2 = await zoomSdk.postMessage({ message:"test" })
+    console.log(res)
+    console.log(res2)
     const array = ["Y.K","H.S","T.Y","T.I","K.O","R.K","A.H","M.T","J.H","H.O","J.O"]
     decideMain(array)
 }
@@ -15,17 +28,6 @@ function decideMain(array){
         let index = 0;
 
         var newContent = document.createTextNode("");
-
-        // let randomDecide = setInterval(function() {
-        //     let randomIndex = Math.floor(Math.random() * array.length);
-
-        //     newContent = document.createTextNode(array[randomIndex]); // テキストノードを作成
-        //     newElement.appendChild(newContent); // p要素にテキストノードを追加
-        //     newElement.setAttribute("id","child-p3"); // p要素にidを設定
-        
-        //     var parentDiv = document.getElementById("main");
-        //     parentDiv.appendChild(newElement);
-        // }, interval);
     
         let randomDecide = setInterval(function() {
             let randomIndex = Math.floor(Math.random() * array.length);
