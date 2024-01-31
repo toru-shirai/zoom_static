@@ -1,27 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="main.css" type="text/css">
 </head>
+
 <body>
-    <div id ="main">
-        <p>
-            ランダム抽選(β版)
-        </p>
-        <p>
-            欠席者があたった場合は、再度抽選してください
+    <div id="choose">
+        <p>保存されている値からランダムに抽選します</p>
+        <p class="msr_btn07">
+            <a href="javascript:chooseFromArray();">抽選</a>
         </p>
     </div>
-    <div>
-        <input id="button1" type="button" value="Aチーム抽選" onclick="AteamdecideButton()">
-        <input id="button1" type="button" value="Bチーム抽選" onclick="BteamdecideButton()">
+    <div id="decided-person">
+        &nbsp;
     </div>
-    <div id ="decided-person">
+
+
+    <button class="accordion">▼設定表示</button>
+    <div id="configure">
+        <p>保存する値を改行区切りで入力して下さい</p>
+
+        <textarea id="input"></textarea>
+
+        <div>
+            <p class="msr_btn07">
+                <a href="javascript:saveData();">保存</a>
+            </p>
+            <p class="msr_btn07">
+                <a href="javascript:showData();">保存ﾃﾞｰﾀ確認</a>
+            </p>
+        </div>
+        <br /><br />
+        <div id="show-data"></div>
+
     </div>
     <script src="https://appssdk.zoom.us/sdk.min.js"></script>
     <script src="/main.js"></script>
 </body>
+
 </html>
